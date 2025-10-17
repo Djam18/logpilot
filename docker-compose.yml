@@ -1,0 +1,29 @@
+services:
+  logpilot:
+    build: .
+    volumes:
+      - ./logs:/logs:ro
+    environment:
+      LOGPILOT_CACHE_URL: redis://redis:6379/0
+      LOGPILOT_SLACK_WEBHOOK: ${LOGPILOT_SLACK_WEBHOOK:-}
+      LOGPILOT_LOG_LEVEL: INFO
+    depends_on:
+      redis:
+        condition: service_healthy
+    profiles:
+      - cli
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    volumes:
+      - redis_data:/data
+
+volumes:
+  redis_data:
