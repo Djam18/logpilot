@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "logpilot"
-version = "0.1.0"
+version = "1.0.0"
 description = "A fast, extensible log analysis CLI — parse, search, aggregate, alert."
 readme = "README.md"
 license = { text = "MIT" }
@@ -12,13 +12,23 @@ requires-python = ">=3.12"
 authors = [{ name = "abdel" }]
 keywords = ["logs", "cli", "analytics", "devops", "observability"]
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 5 - Production/Stable",
     "Environment :: Console",
     "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "Topic :: System :: Logging",
+    "Topic :: System :: Monitoring",
 ]
+
+[project.urls]
+Homepage = "https://github.com/abdel/logpilot"
+Documentation = "https://github.com/abdel/logpilot/blob/main/docs/usage.md"
+Repository = "https://github.com/abdel/logpilot"
+Changelog = "https://github.com/abdel/logpilot/blob/main/CHANGELOG.md"
+"Bug Tracker" = "https://github.com/abdel/logpilot/issues"
 dependencies = [
     "click>=8.1",
     "rich>=13.0",
