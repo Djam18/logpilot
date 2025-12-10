@@ -23,18 +23,19 @@ classifiers = [
     "Topic :: System :: Monitoring",
 ]
 
-[project.urls]
-Homepage = "https://github.com/abdel/logpilot"
-Documentation = "https://github.com/abdel/logpilot/blob/main/docs/usage.md"
-Repository = "https://github.com/abdel/logpilot"
-Changelog = "https://github.com/abdel/logpilot/blob/main/CHANGELOG.md"
-"Bug Tracker" = "https://github.com/abdel/logpilot/issues"
 dependencies = [
     "click>=8.1",
     "rich>=13.0",
     "pydantic>=2.0",
     "pydantic-settings>=2.0",
 ]
+
+[project.urls]
+Homepage = "https://github.com/abdel/logpilot"
+Documentation = "https://github.com/abdel/logpilot/blob/main/docs/usage.md"
+Repository = "https://github.com/abdel/logpilot"
+Changelog = "https://github.com/abdel/logpilot/blob/main/CHANGELOG.md"
+"Bug Tracker" = "https://github.com/abdel/logpilot/issues"
 
 [project.optional-dependencies]
 redis = ["redis>=4.6"]
