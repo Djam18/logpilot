@@ -284,7 +284,11 @@ def search(
         for entry in results:
             click.echo(json.dumps(entry, default=str))
     elif output_fmt == "table":
-        cols = list(results[0].keys())
+        first = results[0]
+        if "method" in first and "path" in first and "status" in first:
+            cols = [k for k in first if first[k] is not None and k not in ("referrer", "user_agent", "protocol")]
+        else:
+            cols = list(first.keys())
         tbl = Table(
             title=f"Search results: {pattern!r} in {file.name}",
             box=box.ROUNDED,
