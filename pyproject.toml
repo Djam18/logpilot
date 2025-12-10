@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "logpilot"
-version = "1.0.0"
+version = "1.0.1"
 description = "A fast, extensible log analysis CLI — parse, search, aggregate, alert."
 readme = "README.md"
 license = { text = "MIT" }

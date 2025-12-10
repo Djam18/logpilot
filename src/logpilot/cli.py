@@ -74,7 +74,7 @@ def _entry_columns(entry: dict[str, Any]) -> tuple[str, str, str]:
 
 
 @click.group()
-@click.version_option(version="1.0.0", prog_name="logpilot")
+@click.version_option(version="1.0.1", prog_name="logpilot")
 def main() -> None:
     """logpilot — fast, extensible log analysis CLI."""
 
