@@ -9,6 +9,22 @@ Versions follow [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [1.0.1] — 2025-12-10
+
+### Fixed
+- `pyproject.toml`: dependencies were incorrectly nested under `[project.urls]`,
+  causing `BackendUnavailable` on `pip install` — moved to `[project]` section
+- CLI `parse --output table`: Apache logs now use smart default columns
+  (skips `referrer`, `user_agent`, `protocol` when all values are `None`)
+- CLI `search`: regex now correctly matches against field values, not dict repr
+- CLI `parse`/`search` stream output: Apache entries display as
+  `METHOD /path → STATUS (N B)` instead of raw dict
+- CLI `tail` command was referenced in docs but not implemented — added
+
+### Changed
+- `parse` command now defaults to `--output table` for a cleaner first run
+- `search` command: `--case-sensitive` flag added; default is case-insensitive
+
 ## [1.0.0] — 2025-10-22
 
 ### Added
